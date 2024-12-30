@@ -7,6 +7,13 @@
 </head>
 <body style="background-color: whitesmoke;color: black;">
 
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
     <h1>THis is heading H1</h1>
     <h2>THis is heading H2</h2>
     <h3>THis is heading H3</h3>
@@ -14,12 +21,14 @@
     <h5>THis is heading H5</h5>
     <h6>THis is heading H6</h6>
     HELLO FROM OUTSIDE heading
+    
     <br>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo temporibus aliquam hic itaque mollitia reprehenderit quis distinctio minus nesciunt sint! Deserunt eos unde, labore sunt veniam asperiores illo harum quo!</p>
     <br>
     
 
     <img src="./3297225.jpg" alt="Analysis Image" width="200" height="200">
+    
     <div>
         <a href="https://www.cricbuzz.com/" target="_blank">Click here to view cricket score </a>
     
@@ -44,7 +53,130 @@
         
         
     </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Sno.</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Kartik</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Rahul</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Pratik</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+    </table>
 
+<br>
+
+    <div class="Male">
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2"></th>
+                    <th colspan="2">Average</th>
+                    <th rowspan="2">Red Eyes</th>
+                </tr>
+                <tr>
+                    <th>Height</th>
+                    <th>Weight</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Males</th>
+                    <td>5.4</td>
+                    <td>80</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>Females</th>
+                    <td>5.4</td>
+                    <td>80</td>
+                    <td>Yes</td>
+                </tr>
+                
+                
+            </tbody>
+        </table>
+    </div>
+    <br>
+
+    <div class="Station">
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Station</th>
+                    <th colspan="2">Temperature</th>
+                    <th rowspan="2">Humidity</th>
+                    <th rowspan="2">Weather</th>
+                </tr>
+                <tr>
+                    <th>Max</th>
+                    <th>Min</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>USA</td>
+                    <td>24</td>
+                    <td>19</td>
+                    <td>60%</td>
+                    <td>Cloudy</td>
+                </tr>
+                <tr>
+                    <td>Germany</td>
+                    <td>5</td>
+                    <td>-1</td>
+                    <td>70%</td>
+                    <td>Rainy</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+    <br>
+
+    <form action="">
+        <label for="Name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <br>
+        <label for="Password">Password:</label>
+        <input type="text" placeholder="Enter Password">
+        <br>
+        <!-- <input type="number"> <br><br> -->
+        
+        
+        <input type="radio" name="gender">
+        <label for="">Male</label> 
+          
+        <input type="radio" name="gender">
+        <label for="">Female</label>
+        <br>
+        <input type="checkbox">
+        <label for="">I Agree to Login</label>
+        <br> 
+        <label for="">Upload Your Resume: </label>
+        <input type="file">
+       <br>
+        <button>Submit</button><br><br>
+        
+        
+    </form>
     
     
      
