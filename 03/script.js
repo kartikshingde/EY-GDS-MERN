@@ -36,9 +36,9 @@ profile={           //object=> key:value  pair
     
     
 };
-let a=true
-console.log(typeof a);
-console.log(typeof isFollow);
+// let a=true
+// console.log(typeof a);
+// console.log(typeof isFollow);
 
 
 let numArr=[4,9,7,3,4,6];
@@ -61,9 +61,91 @@ function getSquare(intArr){
 
     }
     console.log(resultArr);
-
 }
-
-
 getSquare(numArr)
+
+let nameArr=["a","b","c","d","e"]
+
+
+// a function which takes another function as parameter is called  //Higher Order Fn
+
+//Which goes as parameter is Callback Function.
+
+// nameArr.forEach((item)=>{
+//     console.log(item);
+    
+// })
+
+console.log(b);
+//Hoisting-> Declaring all variables at starting as undefined..i.e. No error//
+var b=10;
+
+//Closures In JS ==> Lexical Scoping
+let a=10;
+const sum=()=>{
+    let a=20;
+    console.log(a);
+    
+}
+sum()
+console.log(a);
+
+const studentData=[
+    {
+        name:"Kartik",
+        age:21,
+        email:"sk@email.com"
+    },
+    {
+        name:"Pratik",
+        age:17,
+        email:"pk@email.com"
+    },
+    {
+        name:"Prajwal",
+        age:21,
+        email:"pg@email.com"
+    },
+    {
+        name:"Rohan",
+        age:15,
+        email:"rt@email.com"
+    }
+    
+]
+
+// studentData.forEach((item)=>{                //FOREACH FUNCTION
+//     console.log(item.name,item.age);
+// })
+
+console.log(studentData);
+
+// let adults=studentData.filter((item)=>{         //FIlTER FUNCTION
+//     return item.age>18 && item.email !== "sk@email.com";
+// })
+// console.log(adults)
+
+
+//API fetch from jsonplaceholder...
+// async function getData(){
+//     const data=await fetch('https://jsonplaceholder.typicode.com/posts')
+//     let result=await data.json()
+//     console.log(result);
+
+// }
+// getData()
+
+
+
+
+async function todoData(){
+    const data=await fetch('https://jsonplaceholder.typicode.com/todos')
+    const demoData=await data.json()
+    console.log(demoData);
+    
+}
+todoData()
+
+
+
 
