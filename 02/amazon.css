@@ -1,0 +1,49 @@
+body{
+    width: 95%;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+}
+.left-nav{
+    display: flex;
+    
+    
+
+}
+.left-nav img{
+    width: 90px;
+    
+}   
+.search input{
+    margin-top: 25px;
+}
+section{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+}
+.product-box{
+    border: 2px solid red;
+    padding: 5px;
+}
+.product-box h3{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0%;
+}
+
+@media screen and (max-width:750px){
+    section{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+    }
+    body{
+        background-color: aqua;
+    }
+    
+
+    
+}
