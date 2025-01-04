@@ -1,6 +1,8 @@
 
 import './App.css'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Header from "./Header";
 import Navbar from "./Navbar";
 import Home from "./Home";
@@ -12,6 +14,7 @@ import MainComponenet from "./MainComponenet";
 import Data from "./Data";
 import StyleLearn from './StyleLearn';
 import StudentForm from './StudentForm';
+import NewStudentForm from './NewStudentForm';
 
 function App() {
   //JS
@@ -60,7 +63,9 @@ function App() {
 
       {/* <StyleLearn /> */}
 
-      <StudentForm />
+      {/* <StudentForm /> */}
+
+      <NewStudentForm />
 
 
 
