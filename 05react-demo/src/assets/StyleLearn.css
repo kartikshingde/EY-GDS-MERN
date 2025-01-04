@@ -1,0 +1,9 @@
+.center-class{
+    color: aqua;
+    
+}
+.center-class:hover{
+    transform: scale(1.2);
+    transition: all 1s;
+
+}

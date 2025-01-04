@@ -17,7 +17,7 @@ function Data() {
   return (
     <div>
       {todoList.map((element) => (
-        <div id="complete"  style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:25,} } key={element.id}>
+        <div id="complete" key={element.id}>
             <div className="complete">
                {
                 element.completed && <h3>{element.title}</h3>

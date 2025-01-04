@@ -1,5 +1,9 @@
 #complete{
     border: 0.5px solid white;
-
     color: rgb(24, 243, 251);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+
+
 }

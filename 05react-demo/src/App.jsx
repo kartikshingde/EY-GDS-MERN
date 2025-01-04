@@ -10,6 +10,8 @@ import AddCount from "./AddCount";
 import DecreaseCount from "./DecreaseCount";
 import MainComponenet from "./MainComponenet";
 import Data from "./Data";
+import StyleLearn from './StyleLearn';
+import StudentForm from './StudentForm';
 
 function App() {
   //JS
@@ -53,7 +55,15 @@ function App() {
       <DecreaseCount decreaseCount={decreaseCount}/> */}
 
       {/* <MainComponenet /> */}
-      <Data/>
+
+      {/* <Data/> */}
+
+      {/* <StyleLearn /> */}
+
+      <StudentForm />
+
+
+
  
     </>
   );
