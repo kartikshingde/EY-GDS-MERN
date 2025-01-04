@@ -25,7 +25,7 @@ function Data() {
             </div>
             <div className="incomplete">
             {
-                element.completed?<h1>{element.title}</h1>:""
+                element.completed?"":<h1>{element.title}</h1>
             }
 
             </div>
