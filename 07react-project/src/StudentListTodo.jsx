@@ -1,135 +1,121 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react'
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
-import "./assets/StudentListTodo.css";
-// import Table from "react-bootstrap/Table";
-
-function StudentListTodo() {
-  const [studentInfo, setStudentInfo] = useState({
-    name: "",
-    email: "",
-    age: "",
-    count:1
-  });
-
-  const [studentList, setStudentList] = useState([]);
-
-  //Function to handle input changes
-  let count=1
-  function handleInput(event, field,count) {
-    let result = event.target.value;
-    const resultObj = { ...studentInfo, [field]: result,[count]:count};
-    setStudentInfo(resultObj);
-    count++
-
-    // console.log(resultObj);
-  }
-
-  //Function to add data in list
-  
-  function addData() {
-    
-   
-    const data = [...studentList, studentInfo];
-    setStudentList(data);
-    setStudentInfo({
-      name: "",
-      email: "",
-      age: "",
-      count:""
-      
+function StudentsListTodo() {
+    const [studentInfo, setStudentInfo] = useState({
+        name: "",
+        email: "",
+        age: 0,
     });
-    
+    const [studentList, setStudentList] = useState([]);
+    const [editIndex, setEditIndex] = useState(null)
 
-  }
-  console.log(studentList);
+    //Function to handle inputs changes
+    function handleInput(event, field) {
+        let result = event.target.value
+        const resultObj = { ...studentInfo, [field]: result };
+        setStudentInfo(resultObj);
+    }
 
-  //read Spread Operator Docs
+    //function to add data in list
+    function addData() {
+        const data = [...studentList, studentInfo];
+        setStudentList(data);
+        setStudentInfo({
+            name: "",
+            email: "",
+            age: 0,
+        });
+    }
+    //To set value for Edit index
+    const editData = (index) => {
+        setEditIndex(index);
+        setStudentInfo(studentList[index]);
+    }
 
-  return (
-    <div className="main">
-      {/* <h3>
-        Your Name: <span style={{ color: "red" }}>{studentInfo.name}</span>
-      </h3>
-      <h3>
-        Your Email: <span style={{ color: "purple" }}>{studentInfo.email}</span>
-      </h3>
-      <h3>
-        Your Age: <span style={{ color: "black" }}>{studentInfo.age}</span>
-      </h3> */}
+    function updateData(){
+        const newList =studentList.map((item,index) =>
+            index === editIndex ? studentInfo : item
+        );
+        setStudentList(newList);
+        setEditIndex(null);
+        setStudentInfo({
+            name: "",
+            email: "",
+            age: 0,
+        });
+    }
 
-      <h2>Enter Deatails: </h2>
+    console.log(studentList);
 
-      <label htmlFor="">Name: </label>
-      <input
-        type="text"
-        placeholder="Enter name"
-        value={studentInfo.name}
-        onChange={(event) => {
-          handleInput(event, "name");
-        }}
-      />
-      <br />
 
-      <label htmlFor="">Email: </label>
-      <input
-        type="text"
-        placeholder="Enter Email"
-        value={studentInfo.email}
-        onChange={(event) => {
-          handleInput(event, "email");
-        }}
-      />
-      <br />
+    return (
+        <div>
 
-      <label htmlFor="">Age: </label>
-      <input
-        type="number"
-        placeholder="Enter Age"
-        value={studentInfo.age}
-        onChange={(event) => {
-          handleInput(event, "age");
-        }}
-      />
-      <br />
-      <br />
+            <label htmlFor="">Name : </label>
+            <input
+                type="text" placeholder="Enter Name"
+                value={studentInfo.name}
+                onChange={(event) => {
+                    handleInput(event, "name")
+                }} /><br />
 
-      
-      <button
-        style={{ padding: 10 }}
-        onClick={() => {
-          addData(count);
-        }}
-      >
-        Add Profile
-      </button>
-      <br /><br />
-      <h4>Student Details are as Follows: </h4>
+            <label htmlFor="">Email : </label>
+            <input type="text" placeholder="Enter Email"
+                value={studentInfo.email} onChange={(event) => {
+                    handleInput(event, "email")
+                }} /><br />
 
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Sr No.</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Age</th>
-            </tr>
-          </thead>
-          <tbody>
-            {studentList.map((item,index)=>(
-              <tr key={index}>
-                <td>{item.count}</td>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
-                <td>{item.age}</td>
+            <label htmlFor="">Age : </label>
+            <input type="text" placeholder="Enter age"
+                value={studentInfo.age}
+                onChange={(event) => {
+                    handleInput(event, "age")
+                }} /><br />
+                <br />
 
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
+            {editIndex === null ? (
+                <button onClick={addData}>Add Profile</button>
+            ) : (
+                <>
+                    <button onClick={updateData} style={{backgroundColor:'green'}}>Save Changes</button>
+                    
+                    <button style={{backgroundColor:'red'}}>Cancel Changes</button>
+                </>
+            )}
+
+            <h3>Student List</h3>
+
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th colSpan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {studentList.map((item, index) => (
+                        <tr key={index}>
+                            <td>{item.name}</td>
+                            <td>{item.email}</td>
+                            <td>{item.age}</td>
+                            <td>
+                                <Button variant="info" onClick={() => { editData(index) }}>Edit</Button>
+                            </td>
+                            <td>
+                                <Button variant="danger">Delete</Button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
+        </div>
+
+
+    )
 }
 
-export default StudentListTodo;
+export default StudentsListTodo
