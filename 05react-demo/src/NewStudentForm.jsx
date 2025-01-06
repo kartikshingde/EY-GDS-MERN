@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import './NewStudentForm.css'
 
 function NewStudentForm() {
   const [firstName, setFirstName] = useState("");
