@@ -7,7 +7,7 @@ function StudentsListTodo() {
   const [studentInfo, setStudentInfo] = useState({
     name: "",
     email: "",
-    age: 0,
+    age: null,
   });
   const [studentList, setStudentList] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
