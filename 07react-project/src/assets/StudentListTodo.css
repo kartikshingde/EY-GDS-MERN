@@ -1,10 +1,5 @@
-/* table,th,td{
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 10px 100px;
-    width: 25px;
-} */
-.btn{
-    padding: 5px 8px;
-    border-radius: 5px;
+.heading{
+    color: rgb(42, 217, 2);
+    text-decoration: underline ;
+    
 }
