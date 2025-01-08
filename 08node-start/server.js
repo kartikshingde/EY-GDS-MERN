@@ -1,6 +1,13 @@
 const operations=require("./operations.js")
 
-console.log("Addition= ",operations.sum(10,20));
+const fs=require("fs")
 
-console.log("subtraction= " ,operations.sub(10,20),"Padh...")
+fs.writeFileSync("example.txt","Hello Node @SK!!")
+const result=fs.readFileSync("example.txt","utf-8")
+//utf-8 used to read encrypted file in Strings
+// console.log(result)
+
+ 
+
+
  
