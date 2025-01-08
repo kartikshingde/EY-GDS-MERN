@@ -15,6 +15,7 @@ const server=http.createServer((req,res)=>{
     }else if(req.url==='/contact' && req.method==="GET"){
         res.writeHead(200,{'Content-Type':'text/plane'})
         res.end("hello from /contact")}
+        
     else{
         res.writeHead(200,{'Content-Type':'text/plain'})
         res.end("hello node!!")
