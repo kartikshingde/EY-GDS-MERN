@@ -3,13 +3,21 @@ const app=express()
 
 const PORT=5000
 app.use(express.json())
+app.set("view engine","ejs")
+
+app.get('/studentDetails',(req,res)=>{
+    // res.send("<div><img src='https://images.unsplash.com/photo-1710867753541-101b8da10add?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aWl0fGVufDB8fDB8fHww' alt='image' style=height:200px ><h1>This is Image</h1></div>") 
+    res.render('index')
+})              //Using ejs!!!(Server side rendering)
+app.get('/flipkart',(req,res)=>{
+    res.render('flipkart')
+})
 
 app.post("/userInfo",(req,res)=>{
     
     const name=req.body.name
     const city=req.body.city
     res.send(`Hii My name is ${name} and I'm From ${city}`)
-
      
 })
 

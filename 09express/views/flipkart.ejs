@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flipkart.K</title>
+    <link rel="stylesheet" href="flipkart.css" />
+  </head>
+  <body>
+    <div class="outer-div">
+      <div class="navbar">
+        <div class="logo">
+          <img
+            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg"
+            alt="logo"
+          />
+        </div>
+        <input type="text" placeholder="Search items..." id="Search" />
+        <!-- <button >Login</button> -->
+        User: Mr.rahul
+      </div>
+
+      <div class="product">
+        <div class="items">
+          <img
+            src="https://m.media-amazon.com/images/I/71jG+e7roXL._AC_UY436_FMwebp_QL65_.jpg"
+            alt="macbook"
+          />
+          <br />
+
+          <p style="padding-left: 70px">Apple 2020 Macbook Air</p>
+          <p style="padding-left: 70px">Price:Rs 85000</p>
+          <button style="align-items: center">Add to Cart</button>
+        </div>
+        <div class="items">
+          <img
+            src="https://m.media-amazon.com/images/I/71lD7eGdW-L._AC_UY436_FMwebp_QL65_.jpg"
+            alt="s24"
+          />
+          <br />
+
+          <p style="padding-left: 70px">Samsung S24 Ultra</p>
+          <p style="padding-left: 70px">Price:Rs 140000</p>
+          <button style="align-items: center">Add to Cart</button>
+        </div>
+        <div class="items">
+          <img
+            src="https://m.media-amazon.com/images/I/71BKq+lRMgL._AC_UY436_FMwebp_QL65_.jpg"
+            alt="redmi"
+          />
+          <br />
+
+          <p style="padding-left: 70px">Redmi Note 14</p>
+          <p style="padding-left: 70px">Price:Rs 20000</p>
+          <button style="align-items: center">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <style>
+      .outer-div {
+        border: 2px solid black;
+        height: 700px;
+      }
+      .navbar {
+        /* border: 1px solid black; */
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        justify-content: space-around;
+      }
+
+      .navbar button {
+        width: 75px;
+        height: px;
+      }
+      .navbar input,
+      button {
+        width: 200px;
+        height: 30px;
+      }
+
+      .product div {
+        /* border: 2px solid black; */
+
+        img {
+          height: 70%;
+          width: 70%;
+        }
+      }
+      .product {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding-top: 150px;
+      }
+    </style>
+  </body>
+</html>
