@@ -4,10 +4,20 @@ const app=express()
 const PORT=5000
 app.use(express.json())
 
-// app.get('/',(req,res)=>{
-//     res.send("<h1>Hello</h1>") 
+app.post("/userInfo",(req,res)=>{
     
-// })
+    const name=req.body.name
+    const city=req.body.city
+    res.send(`Hii My name is ${name} and I'm From ${city}`)
+
+     
+})
+
+
+app.get('/',(req,res)=>{
+    res.send("<h1>Go to code and write routes</h1>") 
+    
+})
 
 function isAdult(req,res,next){         //Middleware-It is a helper function 
     let age=req.params.userAge;
@@ -18,8 +28,17 @@ function isAdult(req,res,next){         //Middleware-It is a helper function
         res.send("<h1>You Can't Party</h1>")
     }
 }
+
 app.get('/users/age/:userAge',isAdult,(req,res)=>{
     res.send("<h1>You Can Party</h1>")
+})
+
+app.post('/studentInfo',(req,res)=>{
+    let result=req.query;
+    let name=req.query.name;
+    let age=req.query.age;
+    res.send(`My name is ${name} and age is ${age} and year is ${req.query.year}`)
+    // res.send(JSON.stringify(result)) 
 })
 
 
