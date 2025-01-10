@@ -18,7 +18,7 @@ app.post("/userInfo",(req,res)=>{
     const name=req.body.name
     const city=req.body.city
     res.send(`Hii My name is ${name} and I'm From ${city}`)
-     
+    
 })
 
 
